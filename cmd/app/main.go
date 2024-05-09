@@ -11,6 +11,7 @@ import (
 	"gonum.org/v1/plot/vg"
 
 	ef "github.com/Leonid-Sarmatov/golang-signal-filters/internal/exponential_filter"
+	//mf "github.com/Leonid-Sarmatov/golang-signal-filters/internal/moving_average_filter"
 	rnd "github.com/Leonid-Sarmatov/golang-signal-filters/internal/random_utils"
 )
 
@@ -42,6 +43,7 @@ func main() {
 	}
 
 	out := ef.ExponentialFilter(in, 0.5)
+	//out = mf.MovingAverageFilter(in, 5)
 
 	inputPoints := make(plotter.XYs, len(in))
 	for i := range in {
